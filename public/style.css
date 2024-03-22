@@ -1,0 +1,58 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.logo {
+  color: #0075ff;
+}
+ul .nav-item .nav-link.active,
+ul .nav-item .nav-link:hover {
+  color: #0075ff;
+}
+ul .nav-item {
+  font-size: 25px;
+}
+.loading {
+  font-size: 40px;
+  color: #0075ff;
+}
+.row .card {
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+.create {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.create label {
+  text-align: left;
+  display: block;
+}
+.create h2 {
+  margin: 20px;
+  color: #0075ff;
+}
+.create input,
+.create textarea {
+
+  outline-color: #0077ffbb;
+  width: 100%;
+  padding: 10px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  display: block;
+  color: #0075ff;
+  border-radius: 12px;
+}
+
+
+.create .btn {
+  font-size: 22px;
+  color: #fff;
+  border: none;
+  padding: 8px;
+  border-radius: 12px;
+  cursor: pointer;
+}
