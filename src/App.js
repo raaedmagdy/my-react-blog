@@ -1,10 +1,11 @@
-import Create from "./Create";
+import Home from "./Home";
+
 
 
 function App() {
   return (
     <div>
-      <Create/>
+      <Home/>
     </div>
   );
 }

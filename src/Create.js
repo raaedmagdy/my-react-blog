@@ -1,19 +1,29 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 function Create() {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
+  const [author, setAuthor] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [submittedBlog, setSubmittedBlog] = useState(null);
+  const navigate = useNavigate();
 
   function handleSubmit(e) {
-    const blog = { title, body };
     e.preventDefault();
-    setIsLoading(false);
-    setTitle("");
-    setBody("");
-    console.log(blog);
-    setSubmittedBlog(blog);
+    const blog = { title, body, author };
+    setIsLoading(true);
+    fetch("http://localhost:8000/blogs", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(blog),
+    }).then(() => {
+      console.log("New blog created");
+      setIsLoading(false);
+      setTitle("");
+      navigate("/");
+    });
   }
 
   return (
@@ -28,21 +38,17 @@ function Create() {
           onChange={(e) => setTitle(e.target.value)}
         />
         <label>Blog Body:</label>
-        <textarea
-          required
-          value={body}
-          onChange={(e) => setBody(e.target.value)}
-        ></textarea>
-
+        <textarea required onChange={(e) => setBody(e.target.value)}></textarea>
+        <label>Blog author:</label>
+        <select onChange={(e) => setAuthor(e.target.value)} className="select">
+          <option value="mario">mario</option>
+          <option value="yoshi">yoshi</option>
+        </select>
         {!isLoading && <button className="btn btn-warning">Add Blog</button>}
-        {isLoading && <button className="btn btn-warning">Adding...</button>}
+        {isLoading && (
+          <button className="btn btn-warning">Adding Blog...</button>
+        )}
       </form>
-      {submittedBlog && (
-        <div>
-          <h2>Blog title: {submittedBlog.title}</h2>
-          <p className="lead">Blog Body: {submittedBlog.body}</p>
-        </div>
-      )}
     </div>
   );
 }

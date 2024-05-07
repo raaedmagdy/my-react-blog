@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+.blog a {
+  text-decoration: none;
+}
 .logo {
   color: #0075ff;
 }
@@ -35,24 +38,58 @@ ul .nav-item {
   color: #0075ff;
 }
 .create input,
-.create textarea {
-
+.create textarea,
+select,
+.select {
   outline-color: #0077ffbb;
   width: 100%;
   padding: 10px 10px;
-  margin: 10px 0;
+  margin: 15px 0;
   border: 1px solid #ddd;
   display: block;
   color: #0075ff;
   border-radius: 12px;
 }
-
-
 .create .btn {
-  font-size: 22px;
-  color: #fff;
+  margin-top: 15px;
+  font-size: 18px;
+  color: #333;
   border: none;
-  padding: 8px;
+  padding: 10px;
   border-radius: 12px;
   cursor: pointer;
+}
+.home {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+.blog,
+.blog-details {
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #fafafa;
+}
+.blog:hover,
+.blog-details:hover {
+  box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
+}
+.blog h2 {
+  font-size: 20px;
+  color: #0075ff;
+  margin-bottom: 8px;
+}
+.blog-details h2 {
+  font-size: 40px;
+  color: #0075ff;
+  margin-bottom: 8px;
+}
+.blog-details p {
+  font-size: 40px;
+  color: #0077ff9d;
+  margin-bottom: 8px;
+}
+.blog-details div {
+  font-size: 40px;
+  color: #ffc107;
 }
