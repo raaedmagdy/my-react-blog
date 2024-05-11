@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function BlogList({ blogs, title, handleDelete }) {
+function BlogList({ blogs, title }) {
   return (
     <div>
       <h2>{title}</h2>
@@ -13,7 +13,7 @@ function BlogList({ blogs, title, handleDelete }) {
           </Link>
           <button
             className="btn btn-warning"
-            onClick={() => handleDelete(blog.id)}
+            // onClick={() => handleDelete(blog.id)}
           >
             Delete Blog
           </button>
